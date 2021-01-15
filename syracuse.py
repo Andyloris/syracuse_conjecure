@@ -18,6 +18,7 @@ def search():
         while i < sys.maxsize:
             i += 1
             n = i
+            print('testing ' + str(i))
             while n != 4 or n != 2 or n != 1 or n != 0 or invert(n in cache):
                 # print(n)
                 check = filt(n)

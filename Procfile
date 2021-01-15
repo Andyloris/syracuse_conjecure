@@ -1,1 +1,1 @@
-worker: python syracuse.py
+web: node main.js

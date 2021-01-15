@@ -1,7 +1,11 @@
-var app = require('express')
+var app = require('express')(),
+    PythonShell = require('python-shell')
 
 app.get('/', function(res, req) {
-    res.sendfile('./syracuse_results.txt')
+    PythonShell.run('syracuse.py', function(err, Results) {
+        if (err) throw err;
+        res.send(Results)
+    })
 })
 
 app.listen(process.env.PORT)
