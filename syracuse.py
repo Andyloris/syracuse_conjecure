@@ -30,8 +30,8 @@ def search():
                 if n == 4.0 or n == 2.0 or n == 1.0 or n == 0.0:
                     cache.extend(tree)
                     tree.clear()
-                    # print(str(i) + ' stops\n')
-                    dataend.write(str(i) + ' stops\n')
+                    print(str(i) + ' stops\n')
+                    # dataend.write(str(i) + ' stops\n')
                     break
             else:
                 print('tesr')
