@@ -3,6 +3,7 @@ var app = require('express')(),
 pyshell = new PythonShell.PythonShell('syracuse.py')
 app.get('/', function(req, res) {
     pyshell.on('message', (message) => {
+        res.setHeader('Content-Type', 'text/plain')
         res.send(message)
     })
 })
