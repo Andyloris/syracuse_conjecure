@@ -1,10 +1,9 @@
 var app = require('express')(),
     PythonShell = require('python-shell')
-
+pyshell = new PythonShell('syracuse.py')
 app.get('/', function(res, req) {
-    PythonShell.run('syracuse.py', function(err, Results) {
-        if (err) throw err;
-        res.send(Results)
+    pyshell.on('message', (message) => {
+        res.send(message)
     })
 })
 
